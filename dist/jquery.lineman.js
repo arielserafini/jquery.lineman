@@ -3,51 +3,48 @@
 * Copyright (c) 2012 Ariel Serafini; Licensed MIT, GPL */
 
 (function($) {
-  'use strict';
-
-
+  "use strict";
 
   // Collection method.
   $.fn.lineman = function() {
     return this.each(function() {
-      $.lineman(this);
-    });
-  };
 
+      var $this = $(this),
+        text = $this.text().trim(),
+        words = text.split( " " ),
+        finalHtml = "<span class='line line-1'>" + words[0],
+        lines = 1,
+        height,
+        totalWords = words.length,
+        i = 1,
+        currentWord = words[0],
+        currentHeight = $this.height();
 
-  // Static method.
-  $.lineman = function(elem) {
+      $this.text(currentWord);
+      height = currentHeight;
 
-    var $this = elem,
-      text = $this.innerText.trim(),
-      words = text.split(' '),
-      finalHtml = "<span class='line line-1'>" + words[0],
-      lines = 1,
-      height;
+      for ( i; i < totalWords; i++ ) {
+        currentWord = words[i];
+        currentHeight = $this.height();
 
-    $this.innerText = words[0];
-    height = $this.clientHeight;
+        $this.text( $this.text() + " " + currentWord);
 
-    for ( var i=1;i<words.length; i++ ) {
+        if ( currentHeight > height ) {
 
-      $this.text += ' ' + words[i];
+            //add new line
+            lines++;
+            finalHtml += "</span><span class='line line-" + lines + "'>";
+            height = currentHeight;
+          }
 
-
-      if ( $this.clientHeight > height ) {
-
-          //add new line
-          lines++;
-          finalHtml += "</span><span class='line line-" + lines + "'>";
-          height = $this.clientHeight;
+          finalHtml += " " + currentWord;
         }
 
-        finalHtml += ' ' + words[i];
-      }
+        finalHtml += "</span>";
+        $this.html(finalHtml);
 
-      finalHtml += "</span>";
-      $this.innerHTML = finalHtml;
-
-      return $($this);
+        return $this;
+    });
   };
 
 }(jQuery));
