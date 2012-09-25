@@ -7,9 +7,7 @@
  */
 
 (function($) {
-  'use strict';
-
-
+  "use strict";
 
   // Collection method.
   $.fn.lineman = function() {
@@ -22,35 +20,35 @@
   // Static method.
   $.lineman = function(elem) {
 
-    var $this = $( elem ),
-      text = $this.text().trim(),
-      words = text.split(' '),
+    var text = elem.innerText.trim(),
+      words = text.split(" "),
       finalHtml = "<span class='line line-1'>" + words[0],
       lines = 1,
       height;
 
-    $this.text(words[0]);
-    height = $this.height();
+    elem.innerText = words[0];
+    height = elem.clientHeight;
 
     for ( var i=1;i<words.length; i++ ) {
 
-      $this.text($this.text() + ' ' + words[i]);
+      elem.text += " " + words[i];
 
 
-      if ( $this.height() > height ) {
+      if ( elem.clientHeight > height ) {
+
           //add new line
           lines++;
           finalHtml += "</span><span class='line line-" + lines + "'>";
-          height = $this.height();
-
+          height = elem.clientHeight;
         }
-        finalHtml += ' ' + words[i];
+
+        finalHtml += " " + words[i];
       }
 
       finalHtml += "</span>";
-      $this.html(finalHtml).data("textLines", lines);
+      elem.innerHTML = finalHtml;
 
-      return $this;
+      return $(elem);
   };
 
 }(jQuery));
