@@ -10,20 +10,20 @@
     return this.each(function() {
 
       var $this = $(this),
-        text = $this.text().trim(),
-        words = text.split( " " ),
-        finalHtml = "<span class='line line-1'>" + words[0],
-        lines = 1,
-        height,
-        totalWords = words.length,
-        i = 1,
-        currentWord = words[0],
-        currentHeight = $this.height();
+      text = $this.text().trim(),
+      words = text.split( " " ),
+      finalHtml = "<span class='jQlm-line jQlm-line-1'>" + words[0],
+      lines = 1,
+      height,
+      totalWords = words.length,
+      i = 1,
+      currentWord = words[0],
+      currentHeight;
 
       $this.text(currentWord);
-      height = currentHeight;
+      height = $this.height();
 
-      for ( i; i < totalWords; i++ ) {
+      for ( ; i < totalWords; i++ ) {
         currentWord = words[i];
         currentHeight = $this.height();
 
@@ -33,7 +33,7 @@
 
             //add new line
             lines++;
-            finalHtml += "</span><span class='line line-" + lines + "'>";
+            finalHtml += "</span><span class='jQlm-line jQlm-line-" + lines + "'>";
             height = currentHeight;
           }
 
@@ -44,7 +44,7 @@
         $this.html(finalHtml);
 
         return $this;
-    });
+      });
   };
 
 }(jQuery));
