@@ -1,6 +1,6 @@
 # jQuery Lineman
 
-The best jQuery plugin ever.
+Lets you manipulate individual text lines in html elements like paragraphs or titles.
 
 ## Getting Started
 Download the [production version][min] or the [development version][max].
@@ -15,7 +15,7 @@ In your web page:
 <script src="dist/jquery.lineman.min.js"></script>
 <script>
 jQuery(function($) {
-  $.awesome(); // "awesome"
+  $("p").lineman();
 });
 </script>
 ```
@@ -30,7 +30,7 @@ _(Coming soon)_
 _(Nothing yet)_
 
 ## License
-Copyright (c) 2012 Ariel Serafini  
+Copyright (c) 2012 Ariel Serafini
 Licensed under the MIT, GPL licenses.
 
 ## Contributing

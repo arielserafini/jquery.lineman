@@ -1,7 +1,7 @@
 {
   "name": "jquery.lineman",
   "title": "jQuery Lineman",
-  "description": "The best jQuery plugin ever.",
+  "description": "Lets you manipulate individual text lines in html elements like paragraphs or titles.",
   "version": "0.1.0",
   "homepage": "https://github.com/arielserafini/jquery.lineman",
   "author": {
