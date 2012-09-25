@@ -1,0 +1,33 @@
+{
+  "name": "jquery.lineman",
+  "title": "jQuery Lineman",
+  "description": "The best jQuery plugin ever.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/arielserafini/jquery.lineman",
+  "author": {
+    "name": "Ariel Serafini",
+    "email": "github@arielserafini.com",
+    "url": "http://arielserafini.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arielserafini/jquery.lineman.git"
+  },
+  "bugs": {
+    "url": "https://github.com/arielserafini/jquery.lineman/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/arielserafini/jquery.lineman/blob/master/LICENSE-MIT"
+    },
+    {
+      "type": "GPL",
+      "url": "https://github.com/arielserafini/jquery.lineman/blob/master/LICENSE-GPL"
+    }
+  ],
+  "dependencies": {
+    "jquery": ">= 1.6"
+  },
+  "keywords": []
+}
